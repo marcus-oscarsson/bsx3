@@ -1,0 +1,4 @@
+pytest-aiohttp
+aiohttp
+python-engineio
+python_socketio
