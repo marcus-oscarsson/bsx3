@@ -8,5 +8,4 @@ install:
   - pip install pylint
 script:
   - pylint --rcfile=.pylintrc-shush src/backend/
-  - pytest src/backend
   - pytest --cov=src/backend
