@@ -1,6 +1,6 @@
-pytest-cov
-pytest
 pytest-aiohttp
+pytest-cov
+pytest=3.6.0
 aiohttp
 python-engineio
 python_socketio
