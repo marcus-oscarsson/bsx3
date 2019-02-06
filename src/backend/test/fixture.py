@@ -8,7 +8,6 @@ from backend import server
 @pytest.fixture
 def client():
     """PyTest fixture for REST API"""
+    # pylint: disable=unused-variable,
     flask_app, socketio = server.init_backend()
-    client = flask_app.test_client()
-
-    yield client
+    yield flask_app.test_client()
