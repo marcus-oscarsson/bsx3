@@ -1,0 +1,3 @@
+[submodule "src/backend/bsxapp/HardwareRepository"]
+	path = src/backend/bsxapp/HardwareRepository
+	url = https://github.com/mxcube/HardwareRepository.git

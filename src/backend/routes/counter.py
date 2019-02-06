@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 """ Counter routes
 """
+from flask import Blueprint, jsonify
 
-from aiohttp import web
 from backend.bsxapp import counter
 
-routes = web.RouteTableDef()
+api = Blueprint('counter_api', __name__)
 
 
-@routes.post("/counter/increment")
-async def increment(request):
+@api.route("increment", methods=["POST"])
+def increment():
     """ Increment counter.
 
         Returns:
@@ -17,12 +17,13 @@ async def increment(request):
 
         { counter: (int) count }
     """
-    content = {"counter": counter.increment()}
-    return web.json_response(content, status=200)
+    resp = jsonify({"counter": counter.increment()})
+    resp.status_code = 200
+    return resp
 
 
-@routes.post("/counter/decrement")
-async def decrement(request):
+@api.route("decrement", methods=["POST"])
+def decrement():
     """ Decrements counter.
 
         Returns:
@@ -30,12 +31,13 @@ async def decrement(request):
 
         { counter: (int)
      """
-    content = {"counter": counter.decrement()}
-    return web.json_response(content, status=200)
+    resp = jsonify({"counter": counter.decrement()})
+    resp.status_code = 200
+    return resp
 
 
-@routes.post("/counter/get-count")
-async def get_count(request):
+@api.route("get-count", methods=["POST"])
+def get_count():
     """ Return current count.
 
         Returns:
@@ -43,5 +45,6 @@ async def get_count(request):
 
         { counter: (int)
      """
-    content = {"counter": counter.count()}
-    return web.json_response(content, status=200)
+    resp = jsonify({"counter": counter.count()})
+    resp.status_code = 200
+    return resp

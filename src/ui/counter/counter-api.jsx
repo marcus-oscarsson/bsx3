@@ -11,7 +11,7 @@ export const INIT = 'counter/INIT';
 
 const API_URL = '/api/counter';
 
-const initialState = {
+export const initialState = {
   count: 0,
   isIncrementing: false,
   isDecrementing: false

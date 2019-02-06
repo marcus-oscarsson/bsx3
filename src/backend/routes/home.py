@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 """ Root route """
 
-from aiohttp import web
-from backend.bsxapp import auth
+from flask import Blueprint, Response
 
-routes = web.RouteTableDef()
+api = Blueprint('home_api', __name__)
 
 
-@routes.get('/')
-async def index(request):
+@api.route('/')
+def index():
     """ root route """
-    auth.login()
-    return web.Response(text="HOME")
+    return Response("HOME", status=200)

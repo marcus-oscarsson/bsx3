@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 """ Auth module """
 
-from aiohttp import web
+from flask import Blueprint, jsonify
+from backend.bsxapp import auth
 
-routes = web.RouteTableDef()
+api = Blueprint("auth_api", __name__)
 
 
-@routes.get("/auth/login")
-async def login(request):
+@api.route("login", methods=["GET"])
+def login():
     """ Example login """
-    content = {}
-    return web.json_response(content, status=200)
+    auth.login()
+    resp = jsonify({})
+    return resp

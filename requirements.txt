@@ -2,5 +2,11 @@ pytest-aiohttp
 pytest-cov
 pytest==3.6.0
 aiohttp
+
+gevent
+flask
+python-socketio
 python-engineio
-python_socketio
+flask-socketio
+gevent-websocket
+Flask-Session

@@ -1,27 +1,19 @@
 # -*- coding: utf-8 -*-
-import logging
+from flask import Flask
+from flask_socketio import SocketIO
 
-from aiohttp import web
 from . routes import home, auth, counter
 from . bsxapp import init_app
 
 
 def init_backend():
-    app = web.Application()
-
-    logging.basicConfig(level=logging.DEBUG)
-    app.add_routes(home.routes)
-    app.add_routes(auth.routes)
-    app.add_routes(counter.routes)
+    flask_app = Flask(__name__)
+    flask_app.register_blueprint(home.api, url_prefix='')
+    flask_app.register_blueprint(auth.api, url_prefix='/auth')
+    flask_app.register_blueprint(counter.api, url_prefix='/counter')
     init_app()
 
-    return app
+    socketio = SocketIO(manage_session=False)
+    socketio.init_app(flask_app)
 
-
-def run_server():
-    app = init_backend()
-    web.run_app(app, host='0.0.0.0', port=8080)
-
-
-if __name__ == "__main__":
-    run_server()
+    return flask_app, socketio
