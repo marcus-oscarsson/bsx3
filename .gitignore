@@ -24,6 +24,7 @@ nosetests.xml
 coverage.xml
 *,cover
 .pytest
+.pytest_cache
 
 # Sphinx documentation
 docs/_build/
