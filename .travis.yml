@@ -6,6 +6,9 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install pylint
+  - pip install codecov
 script:
   - pylint --rcfile=.pylintrc-shush src/backend/
-  - pytest --cov=src/backend
+  - pytest --cov-report term --cov=src/backend
+after_success:
+  - codecov
