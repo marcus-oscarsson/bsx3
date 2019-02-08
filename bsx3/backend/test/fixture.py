@@ -2,7 +2,7 @@
 """ Helper functions for pytest """
 import pytest
 
-from backend import server
+from bsx3.backend import server
 
 
 @pytest.fixture
