@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """ Authentication and login related functionality """
-from backend.bsxapp import get_app
+from bsx3.backend.bsxapp import get_app
 
 
 def login():

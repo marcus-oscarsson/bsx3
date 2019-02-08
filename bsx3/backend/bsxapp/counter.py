@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ Counter example module """
 
-from backend.bsxapp import get_app
+from bsx3.backend.bsxapp import get_app
 
 
 def increment():

@@ -2,7 +2,7 @@
 """ Auth module """
 
 from flask import Blueprint, jsonify
-from backend.bsxapp import auth
+from bsx3.backend.bsxapp import auth
 
 api = Blueprint("auth_api", __name__)
 

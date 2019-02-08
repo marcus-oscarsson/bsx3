@@ -2,8 +2,8 @@
 from flask import Flask
 from flask_socketio import SocketIO
 
-from . routes import home, auth, counter
-from . bsxapp import init_app
+from bsx3.backend.routes import home, auth, counter
+from bsx3.backend.bsxapp import init_app
 
 
 def init_backend():

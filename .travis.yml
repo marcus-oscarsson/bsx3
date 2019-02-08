@@ -8,7 +8,7 @@ install:
   - pip install pylint
   - pip install codecov
 script:
-  - pylint --rcfile=.pylintrc-shush src/backend/
-  - pytest --cov-report term --cov=src/backend
+  - pylint --rcfile=.pylintrc-shush bsx3/backend/
+  - pytest --cov-report term --cov=bsx3/backend
 after_success:
   - codecov

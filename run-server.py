@@ -2,7 +2,7 @@
 from gevent import monkey
 monkey.patch_all(thread=False)
 
-from backend import server
+from bsx3.backend import server
 
 flask_app, socketio = server.init_backend()
 

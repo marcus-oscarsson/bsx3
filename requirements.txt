@@ -1,7 +1,5 @@
-pytest-aiohttp
 pytest-cov
 pytest==3.6.0
-aiohttp
 gevent
 flask
 python-socketio
